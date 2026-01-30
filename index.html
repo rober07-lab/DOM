@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #titulo{
+            background-color: aquamarine;color: mediumturquoise;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Con javascript puedo acceder al DOM</h1>
+    <hr>
+    <img id="imagen" src="imagen1.jpeg" width="400px" alt="">
+    <hr>
+    <button onclick="cambiaTexto()">Cambiar texto</button>
+    <button onclick="cambiaImagen()">Cambiar Imagen</button>
+    <button onclick="cambiaCSS()">Cambiar CSS</button>
+    <button onclick="reducirImagen()">Cambiar Ancho</button>
+    <script>
+        function cambiaTexto(){
+            let titulo=document.getElementById("titulo")
+            if(titulo.innerHTML=="Se puede cambiar el texto"){
+                titulo.innerHTML="Con javascript puedo acceder al DOM"  
+            } else {
+                titulo.innerHTML="Se puede cambiar el texto"
+            }
+
+        }
+        function cambiaImagen(){
+            document.getElementById("imagen").src="imagen2.png"
+        }
+        function cambiaCSS(){
+            document.getElementById("titulo").style.backgroundColor="blue";
+            document.getElementById("titulo").style.color="white";
+            document.getElementById("titulo").style.fontFamily="Arial";
+            document.getElementById("titulo").style.fontSize="3em";
+        }
+        function reducirImagen(){
+            document.getElementById("imagen").width=document.getElementById("imagen").width-100;
+        }
+    </script>
+</body>
+</html>
