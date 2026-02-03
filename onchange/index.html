@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #panel-color{
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Evento OnChange</h1>
+    <label for="lista-colores">Seleccione Color</label>
+    <select name="" onchange="cambiaColor()" id="lista-colores">
+        <option value="azul">Azul</option>
+        <option value="rojo">Rojo</option>
+        <option value="amarillo">Amarillo</option>
+    </select>
+    <label for="nombre">Nombre:</label>
+    <input type="text" onblur="cambiaMayusculas()" name="nombre" id="nombre">
+
+    <label for="apellidos">Apellido:</label>
+    <input type="text" onblur="cambiaMayusculas()" name="apellidos" id="apellidos">
+    <div id="panel-color">
+
+    </div>
+    <script>
+        function cambiaMayusculas(){
+            let nombre=document.getElementById("nombre").value;
+            nombreMayusculas = nombre.toUpperCase();
+            document.getElementById("nombre").value=nombreMayusculas;
+
+            let apellidos=document.getElementById("apellidos").value;
+            apellidosMayusculas = apellidos.toUpperCase();
+            document.getElementById("apellidos").value=apellidosMayusculas;
+            
+        }
+        
+        function cambiaColor(){
+            let panel = document.getElementById("panel-color");
+           let colorSeleccionado = document.getElementById("lista-colores").value;
+           if (colorSeleccionado=="azul"){
+            panel.style.backgroundColor = "blue";
+           }
+           if (colorSeleccionado=="rojo"){
+            panel.style.backgroundColor = "red";
+           }
+           if (colorSeleccionado=="amarillo"){
+            panel.style.backgroundColor = "yellow";
+           }
+        }
+    </script>
+</body>
+</html>
