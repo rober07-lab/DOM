@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        #provincias-clm, #provincias-va {display:none;}  
+    </style>
+</head>
+<body>
+     <h1>Indica tu domicilio</h1>
+        Comunidad:<select name="" onchange="muestraProvincias()" id=lista-comunidades>
+            <option value="elija">Elija Provincia</option>
+            <option value="clm">Castilla-La-Mancha</option>
+            <option value="va">Valenciana</option>
+        </select>
+        <select name="" id="provincia-clm">
+            <option value="cr">Ciudad Real</option>
+            <option value="ab">Albacete</option>
+            <option value="to">Toledo</option>
+            <option value="gu">Guadalajara</option>
+            <option value="cu">Cuenca</option>
+        </select>
+        <select name="" id="provincia-va">
+            <option value="ca">CastellÃ³n</option>
+            <option value="va">Valencia</option>
+            <option value="al">Alicante</option>
+            <script>
+        function muestraProvincias(){   
+                        comunidad=document.getElementById("lista-comunidades").value;
+            if (comunidad=="clm") {
+                document.getElementById("provincia-clm").style.display="inline";
+                document.getElementById("provincia-va").style.display="none";
+            }
+            if (comunidad=="va") {
+                document.getElementById("provincia-clm").style.display="none";
+                document.getElementById("provincia-va").style.display="inline";
+            }
+        }
+            </script>
+
+</body>
+</html>
